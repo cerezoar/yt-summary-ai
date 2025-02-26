@@ -28,7 +28,7 @@ def get_transcript(video_id):
         return None
 
 def get_summary(transcript):
-    api_key = os.getenv("API_KEY")  # Replace with your actual API key
+    api_key = os.getenv('OPENROUTER_API_KEY')  # Replace with your actual API key
     url = "https://openrouter.ai/api/v1/chat/completions"
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -55,7 +55,7 @@ def get_summary(transcript):
     print(result.get("choices")[0].get("message").get("content"))
 
 def main():
-    url = "https://www.youtube.com/watch?v=K1Pt1hf-ysQ&ab_channel=HelenaLiu"
+    url = "https://www.youtube.com/watch?v=DSrTS1_jhwE&t=1973s"
     # get the video id from the URL
     vid_id = get_yt_vid_id(url)
     print(f"Video ID: {vid_id}")

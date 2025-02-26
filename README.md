@@ -1,37 +1,68 @@
-# YouTube Summary using AI
+# YouTube Summary
 
-## Overview
+## Description
 
-YouTube Summary AI is a Python-based project designed to generate concise summaries of YouTube videos using natural language processing techniques.
+This project summarizes YouTube videos using the YouTube Transcript API and the OpenRouter API. It extracts the transcript from a YouTube video, then uses the OpenRouter API to generate a summary of the transcript.
 
-## Features
-
-- Extracts key points from YouTube video transcripts.
-- Generates a brief summary of the video content. You change the prompt based on your needs.
+- `main.py`: This is the main script that contains the logic for extracting the transcript and generating the summary.
+- `requirements.txt`: This file contains a list of the Python packages that are required to run the project.
 
 ## Installation
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/yt-summary-ai.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd yt-summary-ai
-   ```
-3. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+1.  Clone the repository:
+
+    ```bash
+    git clone <repository_url>
+    ```
+
+2.  Create a virtual environment:
+
+    ```bash
+    python -m venv venv
+    ```
+
+3.  Activate the virtual environment:
+
+    - On Windows:
+
+      ```bash
+      venv\Scripts\activate
+      ```
+
+    - On macOS and Linux:
+
+      ```bash
+      source venv/bin/activate
+      ```
+
+4.  Install the dependencies:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
 
 ## Usage
 
-1. Run the main script with the YouTube video URL:
-   ```bash
-   python main.py
-   ```
-2. The summary will be displayed in the console.
+1.  Set the environment variable for the OpenRouter API key.
 
-## License
+2.  Run the script:
 
-This project is licensed under the MIT License.
+    ```bash
+    python main.py --url <youtube_video_url>
+    ```
+
+    Replace `<youtube_video_url>` with the URL of the YouTube video you want to summarize.
+
+## API Key
+
+You will need an OpenRouter API key to use this project. You can get an API key from [https://openrouter.ai/](https://openrouter.ai/).
+
+Set the API key as an environment variable named `OPENROUTER_API_KEY`. For example, you can add the following line to your `.env` file:
+
+```
+OPENROUTER_API_KEY=your_api_key_here
+```
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request.
